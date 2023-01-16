@@ -1,0 +1,132 @@
+@keyframes shadow {
+  from {
+    text-shadow: 0 0 3px black;
+    background-color: gray;
+  }
+  50% {
+    text-shadow: 0 0 30px black;
+  }
+  to {
+    text-shadow: 0 0 3px black;
+    background-color: red;
+    margin-left: 500px;
+  }
+}
+
+@keyframes moving-block {
+  from {
+    background-color: yellow;
+    box-shadow: -0px 0px gray;
+    transform: translate(0px);
+  }
+  25% {
+    background-color: green;
+    box-shadow: -5px 0px lightblue;
+    transform: translate(100px, 0px);
+  }
+
+  50% {
+    background-color: blue;
+    box-shadow: 0px -5px orange;
+    transform: translate(100px, 100px);
+  }
+
+  75% {
+    background-color: purple;
+    box-shadow: 5px 0px rgb(141, 94, 5);
+    transform: translate(0px, 100px);
+  }
+
+  to {
+    background-color: yellow;
+    box-shadow: 0px 5px lightblue;
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes moving-image {
+  from {
+  }
+
+  50% {
+    transform: translate(150px) scale(0.8) rotate(15deg);
+  }
+
+  75% {
+    transform: translate(250px) scale(0.5) rotate(30deg);
+  }
+
+  to {
+    transform: translate(10000px) scale(0.3) rotate(50deg);
+    animation-delay: 5s;
+  }
+}
+
+@keyframes check {
+  from {
+    border-radius: 0%;
+    background-color: red;
+  }
+
+  to {
+    border-radius: 50%;
+    background-color: green;
+  }
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.animated-link {
+  font-size: 40px;
+  text-decoration: none;
+}
+
+.animated-link:hover {
+  animation: shadow 2s infinite ease-in-out;
+}
+
+.animated-block {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  background-color: yellow;
+  animation: moving-block 5s infinite ease-in-out;
+}
+
+.animated-image {
+  position: relative;
+  margin-top: 50px;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  animation: moving-image 5s infinite ease-in-out;
+}
+
+.image {
+  width: 300px;
+  height: 300px;
+}
+
+.block {
+  margin-top: 100px;
+  width: 200px;
+  height: 200px;
+  background-color: gray;
+  transition: width 3s ease-in-out 0.5s;
+}
+
+.block:hover {
+  width: 350px;
+}
+
+.check-btn {
+  margin-top: 50px;
+  width: 150px;
+  height: 150px;
+}
+
+.check-btn:focus {
+  animation: check 2s infinite ease-in-out;
+}
